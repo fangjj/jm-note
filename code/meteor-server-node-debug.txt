@@ -1,0 +1,12 @@
+meteor-server-node-debug.txt
+1. 环境
+安装node v6.11.1
+npm install -g node-inspector
+
+2. 调试步骤
+debugger;
+meteor debug
+localhost:3000?port=5858
+chrome source 进行调试
+
+3. 调试技巧

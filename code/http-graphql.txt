@@ -1,0 +1,13 @@
+http-graphql
+url post
+http://dev.clinic.healthydeer.com/graphql
+
+登录：
+body:
+{"query":"mutation LoginClinicUser($input_0:LoginClinicUserInput!) {loginClinicUser(input:$input_0) {clientMutationId,...F0}} fragment F0 on LoginClinicUserPayload {clinicUserSession {accessToken,id}}","variables":{"input_0":{"username":"123456","password":"123456","clinicCode":"gzal","clientMutationId":"0"}}}
+
+查询医生
+header:
+X-AccessToken 94c0e5f2-4cbd-499e-95b5-fb97104f5f24
+body:
+{"query":"query{doctors(condition:{updatedAt:{gt: \"2017/11/1\"}}) { edges { node { updatedAt clinicDoctor { id hospital clinicDepartment{   name } jobTitle expertise tags{   name } isExpert clinicStaff{   jobType { name }   clinicUser{ realName   gender  idCardNumber  phoneNumber  email } } } } }}}","variables":null}
